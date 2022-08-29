@@ -2,7 +2,7 @@
  	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
  		<div class="sidebar-brand-icon">
  			<img class="img-profile rounded-circle" style="height:60px;width:60px;"
- 				src="{{('asstes/img/logo/tpqi.png')}}">
+ 				src="{{asset('asstes/img/logo/tpqi.png')}}">
  		</div>
  		<div class="sidebar-brand-text mx-3">MIS REPORT</div>
  	</a>
@@ -48,7 +48,7 @@
  		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
  			data-parent="#accordionSidebar">
  			<div class="bg-white py-2 collapse-inner rounded">
- 				<a class="collapse-item" href="utilities-color.html">จำนวนเจ้าหน้าที่สอบ ที่รอต่ออายุ</a>
+ 				<a class="collapse-item text-wrap" href="utilities-color.html">จำนวนเจ้าหน้าที่สอบ ที่รอต่ออายุ</a>
  			</div>
  		</div>
  	</li>

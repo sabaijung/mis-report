@@ -2,6 +2,6 @@
 
 @section('content')
 <div>
-	sdfsfsf
+	dashboard
 </div>
 @endsection
