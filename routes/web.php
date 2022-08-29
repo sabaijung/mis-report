@@ -12,3 +12,7 @@ Route::get('/dashboard', function () {
 Route::get('/cp/req-change-subsidize', function () {
     return view('cp.req-change-subsidize.index');
 });
+
+Route::get('/examiner/report-certificate-expire', function () {
+    return view('examiner.report-certificate-expire.index');
+});

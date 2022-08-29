@@ -3,7 +3,7 @@
 <div class="card shadow-lg">
 	<div class="card-body">
 		<div class="row">
-			<h4 class="text-title">ขอเปลี่ยนแปลงข้อมูลผู้สมัคร</h4>
+			<h4 class="text-title">ข้อมูลเจ้าหน้าที่สอบที่ใกล้หมดอายุ</h4>
 		</div>
 		{!! Form::open(['url' => '']) !!}
 
@@ -25,8 +25,8 @@
 				{!! Form::select('cb', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control']) !!}
 			</div>
 			<div class="col-md-3">
-				{!! Form::label('mou', 'เลขที่ MOU', ['class' => 'text-label']) !!}
-				{!! Form::select('mou', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control']) !!}
+				{!! Form::label('cert_expire', 'วันที่ใกล้หมดอายุ', ['class' => 'text-label']) !!}
+				{!! Form::select('cert_expire', ['30' => '30', '60' => '60'], null, ['class' => 'form-control']) !!}
 			</div>
 		</div>
 		<div class="row">
@@ -40,6 +40,15 @@
 		<br><br>
 		<!-- การแสดงผลลัพธ์ -->
 		<div class="row">
+			<div class="col-md-12 text-right">
+				<div>
+					{!! Form::button('พิมพ์', ['class'=>'btn btn-primary']) !!}
+					{!! Form::button('Excel', ['class'=>'btn btn-success']) !!}
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
 			<div class="col-md-12">
 				<div class="table-responsive">
 					<table class="table table-hover" width="100%">
@@ -47,18 +56,14 @@
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">ชื่อ-สกุล</th>
-								<th scope="col">เลขที่ใบสมัคร</th>
-								<th scope="col">ประเภท/คุณวุฒิวิชาชีพ</th>
-								<th scope="col">สถานะ/ชำระ</th>
-								<th scope="col">จัดการ</th>
+								<th scope="col">คุณวุฒิวิชาชีพ/เลขที่ใบประกาศ</th>
+								<th scope="col">วันที่หมดอายุ</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>1</td>
 								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
 								<td>Otto</td>
 								<td>@mdo</td>
 							</tr>
