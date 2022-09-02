@@ -27,6 +27,7 @@
 		</div>
 	</div>
 	@include('partials.scripts')
+	@stack('page-scripts')
 </body>
 
 </html>

@@ -7,34 +7,36 @@
 		</div>
 		{!! Form::open(['url' => '']) !!}
 
-		<div class="row mt-4">
-			<div class="col-md-2">
-				@php
-				$criteria_search = ['1' =>'เลขที่ใบสมัคร', '2'=>'เลขบัตรประชาชน', '3' =>'ชื่อ-นามสกุล'];
-				@endphp
-				{!! Form::label('filter_search', 'ค้นหาจาก', ['class' => 'text-label']) !!}
-				{!! Form::select('filter_search', $criteria_search, null, ['class' => 'form-control','id' =>
-				'filter_search']) !!}
+		<div id="box_search">
+			<div class="row mt-4">
+				<div class="col-md-2">
+					@php
+					$criteria_search = ['1' =>'เลขที่ใบสมัคร', '2'=>'เลขบัตรประชาชน', '3' =>'ชื่อ-นามสกุล'];
+					@endphp
+					{!! Form::label('filter_search', 'ค้นหาจาก', ['class' => 'text-label']) !!}
+					{!! Form::select('filter_search', $criteria_search, null, ['class' => 'form-control','id' =>
+					'filter_search']) !!}
+				</div>
+				<div class="col-md-3">
+					{!! Form::label('keyword', 'คำค้น', ['class' => 'text-label']) !!}
+					{!! Form::text('keyword', null, ['class' => 'form-control','placeholder' =>'กรอกคำค้น...'] ) !!}
+				</div>
+				<div class="col-md-4">
+					{!! Form::label('cb', 'องค์กรรับรอง', ['class' => 'text-label']) !!}
+					{!! Form::select('cb', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control','id' => 'cb']) !!}
+				</div>
+				<div class="col-md-3">
+					{!! Form::label('cert_expire', 'วันที่ใกล้หมดอายุ', ['class' => 'text-label']) !!}
+					{!! Form::select('cert_expire', ['30' => '30', '60' => '60'], null, ['class' => 'form-control']) !!}
+				</div>
 			</div>
-			<div class="col-md-3">
-				{!! Form::label('keyword', 'คำค้น', ['class' => 'text-label']) !!}
-				{!! Form::text('keyword', null, ['class' => 'form-control','placeholder' =>'กรอกคำค้น...'] ) !!}
+			<div class="row">
+				<div class="col-md-12 mt-3 text-center">
+					{!! Form::submit('ค้นหา', ['class'=>'btn btn-primary']) !!}
+					{!! Form::reset('ล้างค่า', ['class'=>'btn btn-secondary']) !!}
+				</div>
 			</div>
-			<div class="col-md-4">
-				{!! Form::label('cb', 'องค์กรรับรอง', ['class' => 'text-label']) !!}
-				{!! Form::select('cb', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control']) !!}
-			</div>
-			<div class="col-md-3">
-				{!! Form::label('cert_expire', 'วันที่ใกล้หมดอายุ', ['class' => 'text-label']) !!}
-				{!! Form::select('cert_expire', ['30' => '30', '60' => '60'], null, ['class' => 'form-control']) !!}
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 mt-3 text-center">
-				{!! Form::submit('ค้นหา', ['class'=>'btn btn-primary']) !!}
-				{!! Form::reset('ล้างค่า', ['class'=>'btn btn-secondary']) !!}
-			</div>
-		</div>
+ 		</div>
 		{!! Form::close() !!}
 
 		<br><br>
@@ -75,3 +77,9 @@
 	</div>
 </div>
 @endsection
+
+@push('page-scripts')
+<script>
+
+</script>
+@endpush
