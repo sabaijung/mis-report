@@ -5,8 +5,8 @@
 		<div class="row">
 			<h4 class="text-title">ขอเปลี่ยนแปลงข้อมูลผู้สมัคร</h4>
 		</div>
-		{!! Form::open(['url' => '']) !!}
-
+		<!-- {!! Form::open(['url' => '']) !!} -->
+		{!! Form::open(['method' => '', 'class' => '']) !!}
 		<div id="box_search">
 			<div class="row mt-4">
 				<div class="col-md-2">
@@ -32,7 +32,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 mt-3 text-center">
-					{!! Form::submit('ค้นหา', ['class'=>'btn btn-primary']) !!}
+					<!-- {!! Form::submit('ค้นหา', ['class'=>'btn btn-primary']) !!} -->
+					<button type="button" class="btn btn-primary" id="btn_search">ค้นหา</button>
 					{!! Form::reset('ล้างค่า', ['class'=>'btn btn-secondary']) !!}
 				</div>
 			</div>
@@ -44,7 +45,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="table-responsive">
-					<table class="table table-hover" width="100%">
+					<table class="table table-hover" id="showData" width="100%">
 						<thead>
 							<tr>
 								<th scope="col">#</th>
@@ -56,14 +57,14 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<!-- <tr>
 								<td>1</td>
 								<td>Mark</td>
 								<td>Otto</td>
 								<td>@mdo</td>
 								<td>Otto</td>
 								<td>@mdo</td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -75,7 +76,48 @@
 
 @push('page-scripts')
 <script>
+$(document).ready(function(){
+	$(function(){
+		var table = $("#showData").DataTable({
+			processing: true,
+			serverSide: true,
+			searching: false,
+			ajax:{
+				url: "{!! url('cp/req-change-subsidize/data_list') !!}",
+				data: function(d){
+					d.filter_search = $("#filter_search").val();
+					d.filter_keyword = $("#keyword").val();
+					d.filter_cb = $("#cb").val();
+					d.filter_mou = $("#mou").val();
+				}
+			},
+			columns:[
+				{
+					data:'DT_RowIndex',
+					searchable:false,
+					orderable: false
+				},
+				{
+					data:'application_no',
+					name:'application_no'
+				}
+			],
+			columnDefs:[
+				{
+					className:"text-center",
+					targets:1
+				}
+			]
+		});
 
+		$("#btn_search").click(function(){
+			//alert("fff");
+			table.draw();
+		})
+
+	})
+
+})
 
 </script>
 @endpush
