@@ -17,7 +17,7 @@ class CpApplicationController extends Controller
 	}
 
 	// เป็นฟังก์ชันสำหรับแสดงผลข้อมูล
-	public function data_list(Reqest $request)
+	public function data_list(Request $request)
 	{
 		$filter_cb = $request->input('filter_cb');
 
@@ -34,7 +34,7 @@ class CpApplicationController extends Controller
 						->order( function ($query){
 							$query->orderBy('id','desc');
 						})
-						->rowColumns(['application_no'])
+						->rawColumns(['application_no'])
 						->make(true);
 	}
 }

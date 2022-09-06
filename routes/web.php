@@ -5,9 +5,9 @@ Route::get('cp/req-change-subsidize/data_list','Cp\CpApplicationController@data_
 Route::resource('/cp/req-change-subsidize','Cp\CpApplicationController');
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard/dashboard');
