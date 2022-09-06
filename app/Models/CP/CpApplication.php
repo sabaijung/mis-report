@@ -18,7 +18,7 @@ class CpApplication extends Model
         return $prefix_title.$this->name.' '.$this->lastname;
     }
 
-     public function prefix(){
+    public function prefix(){
         return $this->belongsTo(BasicPrefixs::class, 'prefixs');
     }
 
