@@ -49,22 +49,14 @@
 						<thead>
 							<tr>
 								<th scope="col">#</th>
-								<th scope="col">ชื่อ-สกุล</th>
 								<th scope="col">เลขที่ใบสมัคร</th>
+								<th scope="col">ชื่อ-สกุล</th>
 								<th scope="col">ประเภท/คุณวุฒิวิชาชีพ</th>
 								<th scope="col">สถานะ/ชำระ</th>
 								<th scope="col">จัดการ</th>
 							</tr>
 						</thead>
 						<tbody>
-							<!-- <tr>
-								<td>1</td>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -100,6 +92,10 @@ $(document).ready(function(){
 				{
 					data:'application_no',
 					name:'application_no'
+				},
+				{
+					data:'full_name',
+					name:'full_name'
 				}
 			],
 			columnDefs:[

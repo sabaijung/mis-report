@@ -31,6 +31,9 @@ class CpApplicationController extends Controller
 						->addColumn('application_no',function($item){
 							return $item->application_no;
 						})
+						->addColumn('full_name',function($item){
+							return $item->FullName;
+						})
 						->order( function ($query){
 							$query->orderBy('id','desc');
 						})
